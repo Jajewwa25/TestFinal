@@ -69,7 +69,7 @@ app.get('/ThaiSongs',(req, res) =>{
 });
 
 app.get('/ThaiSongs/:id',(req, res) =>{
-    ThaiSong.findAll(req.params.id).then(ThaiSongs => {
+    ThaiSong.findByPk(req.params.id).then(ThaiSongs => {
         res.json(ThaiSongs);
     }).catch(err => {
        res.status(500).send(err);
