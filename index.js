@@ -127,7 +127,7 @@ app.get('/EngSongs',(req, res) =>{
 });
 
 app.get('/EngSongs/:id',(req, res) =>{
-    EngSong.findAll(req.params.id).then(EngSongs => {
+    EngSong.findByPk(req.params.id).then(EngSongs => {
         res.json(EngSongs);
     }).catch(err => {
        res.status(500).send(err);
@@ -185,7 +185,7 @@ app.get('/KoreanSongs',(req, res) =>{
 });
 
 app.get('/KoreanSongs/:id',(req, res) =>{
-    KoreanSong.findAll(req.params.id).then(KoreanSongs => {
+    KoreanSong.findByPk(req.params.id).then(KoreanSongs => {
         res.json(KoreanSongs);
     }).catch(err => {
        res.status(500).send(err);
